@@ -1,0 +1,132 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large
+}{}{0em}{}[\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[2]{
+  \item\small{\textbf{#1}{: #2 \vspace{-1pt}}}
+}
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{{\vspace{-2pt}}}
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-1pt}}
+\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*, itemsep=2pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=16pt, itemsep=3pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSkillListStart}{\begin{itemize}[leftmargin=*, itemsep=5pt, parsep=0pt]}
+\newcommand{\resumeSkillListEnd}{\end{itemize}}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\LARGE Александр Суриков} & Telegram: \href{https://t.me/aiex_su}{@aIex\_su} \\
+  Продуктовый аналитик & \\
+  Москва, Россия \;|\; Яндекс.Директ & \\
+\end{tabular*}
+\vspace{-5pt}
+
+\section{Навыки}
+  \resumeSkillListStart
+    \resumeSubItem{Главная экспертиза}{A/B-тестирование, продуктовая стратегия, causal inference, SQL/Python, рекламные продукты}
+    \resumeSubItem{Продуктовая аналитика}{дерево метрик, поиск точек роста, оценка потенциала и инкрементального эффекта, приоритизация портфеля, unit-экономика рекламных сценариев}
+    \resumeSubItem{Эксперименты и каузальная оценка}{A/B-дизайн, основные и защитные метрики, CUPED, стратификация, bucketed t-test и Mann-Whitney, MDE, мощность, глобальный контроль, propensity-модели}
+    \resumeSubItem{Экспертиза и влияние}{ответственность за аналитику направления, декомпозиция неопределенных задач, защита выводов перед бизнесом, ревью экспериментов, наставничество аналитиков, найм стажеров}
+    \resumeSubItem{Инструменты}{SQL: YQL, ClickHouse; Python: pandas, NumPy, scipy; YT, MapReduce, Nirvana/Airflow, DataLens/Tableau, Git, Bash/Linux}
+  \resumeSkillListEnd
+\vspace{0pt}
+
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+
+\resumeSubheading{Яндекс}{2023 -- текущее время}
+    {Продуктовый аналитик, Яндекс.Директ}{}
+    \par\vspace{7pt}
+    {\small\textbf{Стек:} \textit{YQL, ClickHouse, Python, pandas, scipy, A/B и causal inference, YT, Nirvana, DataLens}}
+    \par\vspace{1pt}
+    \resumeItemListStart
+        \resumeItem{Выстроил аналитику направления Рекомендаций}{собрал дерево метрик, глобальный контроль для оценки инкрементального эффекта и стандарты A/B-дизайна. Масштаб -- сотни тысяч клиентов и десятки тысяч применений в месяц; подтвержденный эффект около 100 млн руб. в месяц}
+\vspace{2pt}
+        \resumeItem{Запускал подсказки по стартовым настройкам кампаний}{оценил потенциал и сопроводил запуск подсказок по недельному бюджету и CPA-настройкам. Доля новых кампаний, продолжающих работу после старта, выросла на 7\%, средняя выручка новых кампаний -- более чем на 5\%}
+\vspace{2pt}
+        \resumeItem{Отвечал за аналитику редизайна страницы рекомендаций}{определил метрики и A/B-дизайн с контролем каннибализации и эффекта новизны. Эксперимент показал +40\% к применениям рекомендаций по продукту и +60\% на ключевой поверхности}
+\vspace{2pt}
+        \resumeItem{Вел портфель рекомендаций и подсказок рекламодателям}{сопровождал 20+ A/B: формулировал гипотезы, выбирал метрики, считал MDE и доводил эксперименты до решения. Приоритизировал портфель по ожидаемому инкрементальному эффекту}
+\vspace{2pt}
+        \resumeItem{Стандартизировал запуск A/B}{ввел шаблон гипотез, дизайна, автометрик и критериев решения. Подготовка эксперимента сократилась с нескольких дней до часов; шаблон использован в 20+ запусках}
+\vspace{2pt}
+        \resumeItem{Увеличил мощность экспериментов через Propensity to Apply}{построил CatBoost-модель склонности рекламодателя применить рекомендацию и использовал ее для отбора аудитории и снижения шума в A/B. Подход повышает чувствительность экспериментов без роста трафика}
+\vspace{2pt}
+        \resumeItem{Усиливал аналитическую экспертизу команды}{онбордил и менторил 5 аналитиков и стажеров, ревьюил дизайн экспериментов и выводы, провел 20+ собеседований; зафиксировал процессы в гайдах}
+\vspace{2pt}
+        \resumeItem{Перевел мониторинг продукта в проактивный режим}{внедрил алерты на продуктовые деградации, качество данных и состояние пайплайнов. Система выявляет десятки инцидентов в год до существенного ущерба}
+\vspace{2pt}
+        \resumeItem{Ускорил цикл разработки рекомендаций}{перенес сборку баз из разовых YQL-запросов в продуктовые Python-пайплайны: время сборки и теста сократилось примерно с 2 часов до 30 минут}
+    \resumeItemListEnd
+
+\vspace{5pt}
+\resumeSubheading{Сбер}{2022 -- 2023}
+{Аналитик данных}{}
+    \par\vspace{7pt}
+    {\small\textbf{Стек:} \textit{SQL, Python, Hadoop}}
+    \par\vspace{1pt}
+\resumeItemListStart
+        \resumeItem{Аналитик данных банкоматов}{построил ETL-пайплайн для логов банкоматов, нашел устройства с низким качеством распознавания QR-кодов и связал проблему с версиями прошивок}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\vspace{-2pt}
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {НИУ ВШЭ}{Москва, Россия}
+      {Магистратура, Высшая школа бизнеса}{2025 -- 2027}
+    \vspace{5pt}
+    \resumeSubheading
+      {НИТУ МИСИС}{Москва, Россия}
+      {Бакалавриат, Информатика и вычислительная техника}{2020 -- 2024}
+  \resumeSubHeadingListEnd
+
+\end{document}
