@@ -20,6 +20,8 @@ jobs:
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v4
+        env:
+          SOURCE_DATE_EPOCH: 946684800
         with:
           root_file: resume.tex
           latexmk_use_xelatex: false
