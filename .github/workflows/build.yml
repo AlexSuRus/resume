@@ -1,0 +1,38 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - resume.tex
+      - .github/workflows/build.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: resume.tex
+          latexmk_use_xelatex: false
+          args: -pdf -interaction=nonstopmode -halt-on-error
+
+      - name: Commit updated PDF
+        run: |
+          if git diff --quiet -- resume.pdf && git ls-files --error-unmatch resume.pdf >/dev/null 2>&1; then
+            echo "resume.pdf is already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add resume.pdf
+          git commit -m "docs: rebuild resume PDF"
+          git push
